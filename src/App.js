@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import "./App.css";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Routes from "./Route";
 
 export default class App extends Component{

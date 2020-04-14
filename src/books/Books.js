@@ -1,13 +1,20 @@
-import React from "react";
-import "./Books.css";
+import React, { useEffect, useState } from "react";
+import {BookDisplay} from "./BookDisplay";
 
-export default function Books(){
-    return(
+export default function Books(props){
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch("https://localhost:5001/api/books/")
+        .then(response => response.json())
+        .then(data => setData(data));
+    },[]);
+
+return (
     <div className="Books">
-        <div className= "lander">
-         <b1>Books</b1>
-         <z> Welcome to Fisher Bookstore</z>
+        <div className = "lander">
+            <BookDisplay books={data} />
         </div>
     </div>
-    );
+);
 }
